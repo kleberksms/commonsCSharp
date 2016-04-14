@@ -34,5 +34,13 @@ namespace Filter
             return $"{phrase.Substring(0, (iNextSpace > 0) ? iNextSpace : length).Trim()}{ommission}";
         }
 
+        public static string OnlyNumbers(string input)
+        {
+            var rgx = new Regex("[^0-9]");
+            var result = rgx.Replace(input, "");
+            return result;
+        }
+
+
     }
 }
