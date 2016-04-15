@@ -30,5 +30,50 @@ namespace Filter.Test
             Assert.AreEqual(String.OnlyNumbers("023456/12ºªº346"), "02345612346");
             Assert.AreEqual(String.OnlyNumbers("02£³¬¢¬¬¬3456/12346"), "02345612346");
         }
+
+        [Test]
+        public void FindByMaskOnlySimpleNumberTest()
+        {
+            Assert.AreEqual(String.FindFirstByMaskExpression("000","hello world 123 456"), "123");
+        }
+
+        [Test]
+        public void FindByMaskOnlyNumberTest()
+        {
+            Assert.AreEqual(String.FindFirstByMaskExpression("000.000.000-00", "teste gasuygdfuguyt uyasgfuyasdgfuy sdgf sdu qualquer 123.123.599-50"), "123.123.599-50");
+        }
+
+        [Test]
+        public void FindByMaskOnlyTextTest()
+        {
+            Assert.AreEqual(String.FindFirstByMaskExpression("AAA-AAA-AAA", "teste qualquer 123.123.599.50 OUD-bhd-TES"), "OUD-bhd-TES");
+        }
+
+        [Test]
+        public void FindByMaskCNJTest()
+        {
+            Assert.AreEqual(String.FindFirstByMaskExpression("0000000-00.0000.000.0000", "teste qualquer 123.123.599.50 OUD-bhd-TES 0003182-81.2015.821.0139"), "0003182-81.2015.821.0139");
+        }
+
+        [Test]
+        public void TestIfFormatCorrectRegexWithHyphenForMask()
+        {
+            Assert.AreEqual(String.FormatterRegex("AA 00000-0000"), "([A-Za-z]{2}\\s+\\d{5}(\\-)\\d{4})");
+        }
+
+        [Test]
+        public void TestIfFormatCorrectRegexWithSpaceForMask()
+        {
+            Assert.AreEqual(String.FormatterRegex("AA 00000 0000"), "([A-Za-z]{2}\\s+\\d{5}\\s+\\d{4})");
+        }
+
+        [Test]
+        public void TestIfFormatCorrectRegexWithCnjForMask()
+        {
+            Assert.AreEqual(String.FormatterRegex("0000000-00.0000.000.0000"), "(\\d{7}(\\-)\\d{2}(\\.)\\d{4}(\\.)\\d{3}(\\.)\\d{4})");
+        }
+
+
+
     }
 }
