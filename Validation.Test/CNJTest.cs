@@ -1,5 +1,4 @@
-﻿using System.Runtime.InteropServices;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace Validation.Test
 {
@@ -13,6 +12,13 @@ namespace Validation.Test
         {
             var cnj = new Cnj("0003182-81.2015.821.0139");
             Assert.AreEqual(cnj.IsValid(), true);
+        }
+
+        [Test]
+        public void IsInvalidCnj2015()
+        {
+            var cnj = new Cnj("0003182-84.2015.821.0139");
+            Assert.AreEqual(cnj.IsValid(), false);
         }
 
         [Test]

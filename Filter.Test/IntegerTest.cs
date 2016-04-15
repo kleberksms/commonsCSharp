@@ -1,6 +1,4 @@
-﻿using NUnit.Framework;
-
-namespace Filter.Test
+﻿namespace Filter.Test
 {
     
     public class IntegerTest

@@ -40,7 +40,5 @@ namespace Filter
             var result = rgx.Replace(input, "");
             return result;
         }
-
-
     }
 }
