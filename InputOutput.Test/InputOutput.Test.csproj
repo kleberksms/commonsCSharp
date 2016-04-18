@@ -62,9 +62,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\IO\InpitOutput.csproj">
+    <ProjectReference Include="..\InputOutput\InputOutput.csproj">
       <Project>{2841cbd5-b9e2-4a40-835e-a01e02152a58}</Project>
-      <Name>InpitOutput</Name>
+      <Name>InputOutput</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

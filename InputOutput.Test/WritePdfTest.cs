@@ -1,4 +1,4 @@
-﻿using IO;
+﻿using InputOutput;
 using NUnit.Framework;
 
 namespace InputOutput.Test
