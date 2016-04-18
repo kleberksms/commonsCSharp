@@ -47,11 +47,13 @@ namespace InputOutput
             return this;
         }
 
-        public WritePdf AddText(int alignment, string text, float x, float y, float rotation)
+        public WritePdf AddText(int alignment, string text, float x, float y, float rotation, int page = 1)
         {
+            PdfImportedPage pdfImportedPage = _writer.GetImportedPage(_reader, 1);
             _cb.BeginText();
             _cb.ShowTextAligned(alignment,text,x,y,rotation);
             _cb.EndText();
+            _cb.AddTemplate(pdfImportedPage,0,0);
             return this;
         }
 
