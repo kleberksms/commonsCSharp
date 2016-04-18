@@ -2,7 +2,7 @@
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 
-namespace IO
+namespace InputOutput
 {
     public class WritePdf
     {

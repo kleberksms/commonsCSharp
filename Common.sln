@@ -7,9 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Filter", "Filter\Filter.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Filter.Test", "Filter.Test\Filter.Test.csproj", "{90E97ADA-669E-424F-A542-D4C833AD1B8D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IO", "IO\IO.csproj", "{2841CBD5-B9E2-4A40-835E-A01E02152A58}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InpitOutput", "IO\InpitOutput.csproj", "{2841CBD5-B9E2-4A40-835E-A01E02152A58}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OI.Test", "OI.Test\OI.Test.csproj", "{C716B0F4-9393-494F-B258-870A29052E6B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InputOutput.Test", "OI.Test\InputOutput.Test.csproj", "{C716B0F4-9393-494F-B258-870A29052E6B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Security", "Security\Security.csproj", "{C1CFFE4F-5140-4079-A374-5B8BF91024E9}"
 EndProject

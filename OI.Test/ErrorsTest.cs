@@ -1,5 +1,5 @@
 ﻿using NUnit.Framework;
-namespace OI.Test
+namespace InputOutput.Test
 {
     [TestFixture]
     public class ErrorsTest

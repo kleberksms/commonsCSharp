@@ -2,7 +2,7 @@
 using iTextSharp.text.pdf;
 using iTextSharp.text.pdf.parser;
 
-namespace IO
+namespace InputOutput
 {
     public class ReadPdf
     {
