@@ -73,7 +73,29 @@ namespace Filter.Test
             Assert.AreEqual(String.FormatterRegex("0000000-00.0000.000.0000"), "(\\d{7}(\\-)\\d{2}(\\.)\\d{4}(\\.)\\d{3}(\\.)\\d{4})");
         }
 
+        [Test]
+        public void TestStringBetween()
+        {
+            Assert.AreEqual(String.GetBetween("This is an example string and my data is here","my","is"),"data");
+        }
 
+        [Test]
+        public void TestStringBetweenInclude()
+        {
+            Assert.AreEqual(String.GetBetween("This is an example string and my data is here", "my", "is", true), "my data is");
+        }
+
+        [Test]
+        public void TestOnlyAlpha()
+        {
+            Assert.AreEqual(String.OnlyAlphanumerics("465@54b#d!3-sf1sd51-f.dsfs4f-/4df5s1f6f"), "46554bd3sf1sd51fdsfs4f4df5s1f6f");
+        }
+
+        [Test]
+        public void TestAddMask()
+        {
+            Assert.AreEqual(String.AddMask("0000000-00.0000.000.0000","12345671212341231234"),"1234567-12.1234.123.1234");
+        }
 
     }
 }

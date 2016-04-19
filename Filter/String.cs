@@ -8,15 +8,11 @@ namespace Filter
 
         public static string Slugfy(this string phrase)
         {
-            var str = phrase.RemoveAccent().ToLower();
-            // invalid chars           
-            str = Regex.Replace(str, @"[^a-z0-9\s-]", "");
-            // convert multiple spaces into one space   
+            var str = phrase.RemoveAccent().ToLower();       
+            str = Regex.Replace(str, @"[^a-z0-9\s-]", "");   
             str = Regex.Replace(str, @"\s+", " ").Trim();
-            // cut and trim 
             str = str.Substring(0, str.Length <= 45 ? str.Length : 45).Trim();
-            str = Regex.Replace(str, @"\s", "-"); // hyphens   
-
+            str = Regex.Replace(str, @"\s", "-");
             return str;
         }
 
@@ -41,16 +37,22 @@ namespace Filter
             return result;
         }
 
+        public static string OnlyAlphanumerics(string input)
+        {
+            var rgx = new Regex("[^A-Za-z0-9]");
+            var result = rgx.Replace(input, "");
+            return result;
+        }
+
         public static object FindFirstByMaskExpression(string mask, string text)
         {
             var result = string.Empty;
 
-
-            Regex regex = new Regex(FormatterRegex(mask),
+            var regex = new Regex(FormatterRegex(mask),
             RegexOptions.Compiled |
             RegexOptions.CultureInvariant);
 
-            Match match = regex.Match(text);
+            var match = regex.Match(text);
 
             if (match.Success)
             {
@@ -66,6 +68,7 @@ namespace Filter
             var countLetter = 1;
             var countNumber = 1;
             var aux = string.Empty;
+
             foreach (var letter in formatter)
             {
                 if (countLetter > 1)
@@ -118,19 +121,35 @@ namespace Filter
                     regex += aux;
                     aux = string.Empty;
                 }
-
             }
             regex += aux;
             return @"("+regex+")";
         }
 
-        public static string GetBetween(string strSource, string strStart, string strEnd)
+        public static string GetBetween(string strSource, string strStart, string strEnd, bool includeStartEnd = false)
         {
             if (!strSource.Contains(strStart) || !strSource.Contains(strEnd)) return string.Empty;
 
             var start = strSource.IndexOf(strStart, 0, StringComparison.Ordinal) + strStart.Length;
             var end = strSource.IndexOf(strEnd, start, StringComparison.Ordinal);
-            return strSource.Substring(start, end - start);
+            if (includeStartEnd)
+            {
+                return strStart + strSource.Substring(start, end - start) + strEnd;
+            }
+            return strSource.Substring(start, end - start).Trim();
+        }
+
+        public static object AddMask(string mask, string source)
+        {
+            source = OnlyAlphanumerics(source);
+            for (var i = 0; i < mask.Length; i++)
+            {
+                if (!mask[i].Equals('A') && !mask[i].Equals('0'))
+                {
+                    source = source.Insert(i, mask[i].ToString());
+                }
+            }
+            return source;
         }
     }
 }
