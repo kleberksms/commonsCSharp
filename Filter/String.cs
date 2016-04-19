@@ -126,13 +126,13 @@ namespace Filter
             return @"("+regex+")";
         }
 
-        public static string GetBetween(string strSource, string strStart, string strEnd, bool includeStartEnd = false)
+        public static string GetBetween(string strSource, string strStart, string strEnd, bool inclusive = false)
         {
             if (!strSource.Contains(strStart) || !strSource.Contains(strEnd)) return string.Empty;
 
             var start = strSource.IndexOf(strStart, 0, StringComparison.Ordinal) + strStart.Length;
             var end = strSource.IndexOf(strEnd, start, StringComparison.Ordinal);
-            if (includeStartEnd)
+            if (inclusive)
             {
                 return strStart + strSource.Substring(start, end - start) + strEnd;
             }
