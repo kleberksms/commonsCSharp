@@ -123,5 +123,14 @@ namespace Filter
             regex += aux;
             return @"("+regex+")";
         }
+
+        public static string GetBetween(string strSource, string strStart, string strEnd)
+        {
+            if (!strSource.Contains(strStart) || !strSource.Contains(strEnd)) return string.Empty;
+
+            var start = strSource.IndexOf(strStart, 0, StringComparison.Ordinal) + strStart.Length;
+            var end = strSource.IndexOf(strEnd, start, StringComparison.Ordinal);
+            return strSource.Substring(start, end - start);
+        }
     }
 }
