@@ -8,20 +8,20 @@ namespace Validation.Test
         [Test]
         public void ValidCnpjTest()
         {
-            var cnpj = new Cnpj("03.404.018/0015-42");
+            var cnpj = new Cnpj("45.855.406/0001-94");
             Assert.AreEqual(cnpj.IsValid(),true);
         }
    
         [Test]
         public void InvalidCnpjTest()
         {
-            var cnpj = new Cnpj("03.404.018/1015-42");
+            var cnpj = new Cnpj("45.855.407/0001-94");
             Assert.AreEqual(cnpj.IsValid(), false);
         }
         [Test]
         public void CnpjLess14CharsTest()
         {
-            var cnpj = new Cnpj("03.404.018/05-42");
+            var cnpj = new Cnpj("45.855.406/01-94");
             Assert.AreEqual(cnpj.IsValid(), false);
         }
     }
