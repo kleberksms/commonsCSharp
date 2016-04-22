@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Globalization;
-using String = Filter.String;
+using System.Text.RegularExpressions;
 
 namespace Validation
 {
@@ -10,8 +10,9 @@ namespace Validation
 
         public Cnj(string cnj)
         {
-            cnj = String.OnlyNumbers(cnj);
-
+            var regex = new Regex("[^0-9]");
+            cnj = regex.Replace(cnj, "");
+            
             if (cnj.Length < 20)
             {
                 cnj = cnj.PadLeft(20, Convert.ToChar("0"));
