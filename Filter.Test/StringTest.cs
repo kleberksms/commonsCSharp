@@ -56,43 +56,43 @@ namespace Filter.Test
         }
 
         [Test]
-        public void TestIfFormatCorrectRegexWithHyphenForMask()
+        public void IfFormatCorrectRegexWithHyphenForMaskTest()
         {
             Assert.AreEqual(String.FormatterRegex("AA 00000-0000"), "([A-Za-z]{2}\\s+\\d{5}(\\-)\\d{4})");
         }
 
         [Test]
-        public void TestIfFormatCorrectRegexWithSpaceForMask()
+        public void IfFormatCorrectRegexWithSpaceForMaskTest()
         {
             Assert.AreEqual(String.FormatterRegex("AA 00000 0000"), "([A-Za-z]{2}\\s+\\d{5}\\s+\\d{4})");
         }
 
         [Test]
-        public void TestIfFormatCorrectRegexWithCnjForMask()
+        public void IfFormatCorrectRegexWithCnjForMaskTest()
         {
             Assert.AreEqual(String.FormatterRegex("0000000-00.0000.000.0000"), "(\\d{7}(\\-)\\d{2}(\\.)\\d{4}(\\.)\\d{3}(\\.)\\d{4})");
         }
 
         [Test]
-        public void TestStringBetween()
+        public void StringBetweenTest()
         {
             Assert.AreEqual(String.GetBetween("This is an example string and my data is here","my","is"),"data");
         }
 
         [Test]
-        public void TestStringBetweenInclude()
+        public void StringBetweenIncludeTest()
         {
             Assert.AreEqual(String.GetBetween("This is an example string and my data is here", "my", "is", true), "my data is");
         }
 
         [Test]
-        public void TestOnlyAlpha()
+        public void OnlyAlphanumericTest()
         {
             Assert.AreEqual(String.OnlyAlphanumerics("465@54b#d!3-sf1sd51-f.dsfs4f-/4df5s1f6f"), "46554bd3sf1sd51fdsfs4f4df5s1f6f");
         }
 
         [Test]
-        public void TestAddMask()
+        public void AddMaskTest()
         {
             Assert.AreEqual(String.AddMask("0000000-00.0000.000.0000","12345671212341231234"),"1234567-12.1234.123.1234");
         }

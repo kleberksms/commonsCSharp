@@ -31,7 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Cnh.cs" />
     <Compile Include="Cnj.cs" />
+    <Compile Include="Cnpj.cs" />
+    <Compile Include="Cpf.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

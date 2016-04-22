@@ -61,7 +61,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CnhTest.cs" />
+    <Compile Include="CnpjTest.cs" />
     <Compile Include="CnjTest.cs" />
+    <Compile Include="CpfTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
