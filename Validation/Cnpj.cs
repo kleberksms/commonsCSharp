@@ -6,7 +6,7 @@ namespace Validation
 {
     /**
      * 
-     * Code from: https://github.com/Respect/Validation/blob/master/library/Rules/Cnpj.php
+     * Code from http://jsfromhell.com
      */
     public class Cnpj
     {

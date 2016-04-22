@@ -3,9 +3,13 @@ using System.Text.RegularExpressions;
 
 namespace Validation
 {
+    /**
+     * 
+     * Code from http://jsfromhell.com
+     */
     public class Cpf
     {
-        private string _cpf;
+        private readonly string _cpf;
 
         public Cpf(string cpf)
         {
@@ -14,7 +18,6 @@ namespace Validation
 
         public bool IsValid()
         {
-
             var regex = new Regex("[^0-9]");
             int[] c = regex.Replace(_cpf, "").Select(x => int.Parse(x.ToString())).ToArray();
             if (c.Length != 11)
