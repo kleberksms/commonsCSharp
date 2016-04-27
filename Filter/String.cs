@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace Filter
@@ -46,20 +47,31 @@ namespace Filter
 
         public static object FindFirstByMaskExpression(string mask, string text)
         {
-            var result = string.Empty;
-
             var regex = new Regex(FormatterRegex(mask),
             RegexOptions.Compiled |
             RegexOptions.CultureInvariant);
 
             var match = regex.Match(text);
 
-            if (match.Success)
-            {
-                result = match.Groups[1].Value;
-            }
+            var result = match.Groups[1].Value;
 
             return result;
+        }
+
+        public static List<string> FindListByMaskExpression(string mask, string text)
+        {
+            var list = new List<string>();
+            var regex = new Regex(FormatterRegex(mask),
+            RegexOptions.Compiled |
+            RegexOptions.CultureInvariant);
+
+            var matchs = regex.Matches(text);
+
+            foreach (Match match in matchs)
+            {
+                list.Add(match.Value);
+            }
+            return list;
         }
 
         public static string FormatterRegex(string formatter)

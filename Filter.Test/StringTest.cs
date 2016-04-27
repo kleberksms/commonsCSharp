@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System.Collections.Generic;
+using NUnit.Framework;
 namespace Filter.Test
 {
     [TestFixture]
@@ -53,6 +54,15 @@ namespace Filter.Test
         public void FindByMaskCNJTest()
         {
             Assert.AreEqual(String.FindFirstByMaskExpression("0000000-00.0000.000.0000", "teste qualquer 123.123.599.50 OUD-bhd-TES 0003182-81.2015.821.0139"), "0003182-81.2015.821.0139");
+        }
+
+
+        [Test]
+        public void FindListByMask()
+        {
+            var list = new List<string> {"01-02-03", "12-34-56", "85-74-96"};
+            CollectionAssert.AreEqual(list, String.FindListByMaskExpression("00-00-00", "test with 01-02-03 and 12-34-56 and others numbers 85-74-96"));
+            
         }
 
         [Test]
