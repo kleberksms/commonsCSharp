@@ -1,4 +1,7 @@
-﻿namespace Validation
+﻿using System.Linq;
+using System.Text.RegularExpressions;
+
+namespace Validation
 {
     public class Cnh
     {
@@ -13,25 +16,35 @@
         {
             var ret = false;
 
-            //php code
-           // if ((strlen($input = preg_replace('/[^\d]/', '', $input)) == 11)
-           //&& (str_repeat($input[1], 11) != $input)) {
-           // $dsc = 0;
-           //     for ($i = 0, $j = 9, $v = 0; $i < 9; ++$i, --$j) {
-           //     $v += (int) $input[$i] * $j;
-           //     }
-           //     if (($vl1 = $v % 11) >= 10) {
-           //     $vl1 = 0;
-           //     $dsc = 2;
-           //     }
-           //     for ($i = 0, $j = 1, $v = 0; $i < 9; ++$i, ++$j) {
-           //     $v += (int) $input[$i] * $j;
-           //     }
-           // $vl2 = ($x = ($v % 11)) >= 10 ? 0 : $x - $dsc;
-           // $ret = sprintf('%d%d', $vl1, $vl2) == substr($input, -2);
-           // }
+            var regex = new Regex("[^0-9]");
+            int[] c = regex.Replace(_cnh, "").Select(x => int.Parse(x.ToString())).ToArray();
+            if (c.Length != 11)
+            {
+                return false;
+            }
 
-            return ret;
+            var dsc = 0;
+            var j = 9;
+            var v = 0;
+            for (var i = 0; i < 9; ++i, --j)
+            {
+                v += c[i] * j;
+            }
+            var vl1 = v % 11;
+            if (vl1 >= 10)
+            {
+                vl1 = 0;
+                dsc = 2;
+            }
+            j = 1;
+            v = 0;
+            for (var i = 0; i < 9; ++i, ++j)
+            {
+                v += c[i]*j;
+            }
+            var vl2 = ((v % 10) >= 10) ? 0 : (v % 10) - dsc;
+            
+            return _cnh.Substring(9,2).Equals($"{vl1}{vl2}");
         }
     }
 }

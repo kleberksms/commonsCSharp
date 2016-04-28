@@ -11,14 +11,14 @@ namespace Validation.Test
         public void TestValidCnj()
         {
             var cnj = new Cnj("0003182-81.2015.821.0139");
-            Assert.AreEqual(cnj.IsValid(), true);
+            Assert.IsTrue(cnj.IsValid());
         }
 
         [Test]
         public void TestInvalidCnj()
         {
             var cnj = new Cnj("0003182-84.2015.821.0139");
-            Assert.AreEqual(cnj.IsValid(), false);
+            Assert.IsFalse(cnj.IsValid());
         }
 
 
@@ -26,7 +26,7 @@ namespace Validation.Test
         public void TestValidCnjLess20Chars()
         {
             var cnj = new Cnj("3182-81.2015.821.0139");
-            Assert.AreEqual(cnj.IsValid(), true);
+            Assert.IsTrue(cnj.IsValid());
         }
 
 
