@@ -35,6 +35,7 @@
     <Compile Include="Cnj.cs" />
     <Compile Include="Cnpj.cs" />
     <Compile Include="Cpf.cs" />
+    <Compile Include="Email.cs" />
     <Compile Include="NfeAccessKey.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
