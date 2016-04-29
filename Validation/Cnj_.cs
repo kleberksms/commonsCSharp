@@ -4,11 +4,11 @@ using System.Text.RegularExpressions;
 
 namespace Validation
 {
-    public class Cnj
+    public class Cnj_
     {
         private readonly string _cnj;
 
-        public Cnj(string cnj)
+        public Cnj_(string cnj)
         {
             var regex = new Regex("[^0-9]");
             cnj = regex.Replace(cnj, "");
@@ -18,7 +18,6 @@ namespace Validation
                 cnj = cnj.PadLeft(20, Convert.ToChar("0"));
             }
             _cnj = cnj;
-
         }
 
         public bool IsValid( )

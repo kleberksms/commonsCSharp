@@ -32,7 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Cnh.cs" />
-    <Compile Include="Cnj.cs" />
+    <Compile Include="Cnj_.cs" />
     <Compile Include="Cnpj.cs" />
     <Compile Include="Cpf.cs" />
     <Compile Include="Email.cs" />
