@@ -3,7 +3,7 @@
 namespace Validation.Test
 {
     [TestFixture]
-    public class CnjTest
+    public class Cnj_Test
     {
 
 
