@@ -2,7 +2,7 @@
 
 ### CNPJ
 
- - Verify calidate of Cnpj number
+ - Verify Cnpj number
   
  ```cs
     var cnpj = new Cnpj("45.855.406/0001-94");

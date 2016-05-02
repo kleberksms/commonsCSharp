@@ -2,7 +2,7 @@
 
 ### CNJ
 
- - Verify calidate of CNJ number
+ - Verify CNJ number
   
 ```cs
     var cnj = new Cnj("0003182-81.2015.8.21.0139");
