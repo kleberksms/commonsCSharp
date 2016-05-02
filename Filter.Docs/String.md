@@ -2,16 +2,16 @@
 
 ### String
 
- - Slugfy
- - RemoveAccent
- - Excerpt
- - OnlyNumbers
- - OnlyAlphanumerics
- - FindFirstByMaskExpression
- - FindListByMaskExpression
- - FormatterRegex
- - GetBetween
- - AddMask
+ - [Slugfy]
+ - [RemoveAccent]
+ - [Excerpt]
+ - [OnlyNumbers]
+ - [OnlyAlphanumerics]
+ - [FindFirstByMaskExpression]
+ - [FindListByMaskExpression]
+ - [FormatterRegex]
+ - [GetBetween]
+ - [AddMask]
   
 #### Slugfy
 ```cs
@@ -70,5 +70,16 @@
 ```cs
     String.AddMask("0000000-00.0000.000.0000","12345671212341231234"); //"1234567-12.1234.123.1234"
 ```
+
+[Slugfy]: <https://github.com/kleberksms/commonsCSharp/blob/master/Filter.Docs/String.md#slugfy>
+[RemoveAccent]: <https://github.com/kleberksms/commonsCSharp/blob/master/Filter.Docs/String.md#removeaccent>
+[Excerpt]: <https://github.com/kleberksms/commonsCSharp/blob/master/Filter.Docs/String.md#slugfy>
+[OnlyNumbers]: <https://github.com/kleberksms/commonsCSharp/blob/master/Filter.Docs/String.md#excerpt>
+[OnlyAlphanumerics]: <https://github.com/kleberksms/commonsCSharp/blob/master/Filter.Docs/String.md#onlynumbers>
+[FindFirstByMaskExpression]: <https://github.com/kleberksms/commonsCSharp/blob/master/Filter.Docs/String.md#findfirstbymaskexpression>
+[FindListByMaskExpression]: <https://github.com/kleberksms/commonsCSharp/blob/master/Filter.Docs/String.md#findlistbymaskexpression>
+[FormatterRegex]: <https://github.com/kleberksms/commonsCSharp/blob/master/Filter.Docs/String.md#formatterregex>
+[GetBetween]: <https://github.com/kleberksms/commonsCSharp/blob/master/Filter.Docs/String.md#getbetween>
+[AddMask]: <https://github.com/kleberksms/commonsCSharp/blob/master/Filter.Docs/String.md#addmask>
 
 

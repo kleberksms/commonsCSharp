@@ -7,6 +7,7 @@ Library inspired by [Respect].
 
 ### Filter Documents
    
+* [String]
    
    
 ### Validation Documents
@@ -21,6 +22,8 @@ Library inspired by [Respect].
 * [NfeAccessKey]
 * [PrimeNumber]
 * [Vowel]
+   
+ [String]: <https://github.com/kleberksms/commonsCSharp/blob/master/Filter.Docs/String.md>
    
  [Cnh]: <https://github.com/kleberksms/commonsCSharp/blob/master/Validation.Docs/Cnh.md>
  [Cnj]: <https://github.com/kleberksms/commonsCSharp/blob/master/Validation.Docs/Cnj.md>
