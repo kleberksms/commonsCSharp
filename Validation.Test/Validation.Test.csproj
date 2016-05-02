@@ -64,6 +64,7 @@
     <Compile Include="CnhTest.cs" />
     <Compile Include="CnpjTest.cs" />
     <Compile Include="CnjTest.cs" />
+    <Compile Include="ConsonantTest.cs" />
     <Compile Include="CpfTest.cs" />
     <Compile Include="EmailTest.cs" />
     <Compile Include="NfeAccessKeyTest.cs" />

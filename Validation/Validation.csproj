@@ -34,6 +34,7 @@
     <Compile Include="Cnh.cs" />
     <Compile Include="Cnj.cs" />
     <Compile Include="Cnpj.cs" />
+    <Compile Include="Consonant.cs" />
     <Compile Include="Cpf.cs" />
     <Compile Include="Email.cs" />
     <Compile Include="NfeAccessKey.cs" />

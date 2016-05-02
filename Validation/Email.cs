@@ -8,8 +8,18 @@ namespace Validation
 {
     public class Email
     {
+        
+
+        public bool resolveDns = false;
+        public bool whiteListOnly = false;
+
+
         private string _email;
-        public bool validDomain = false;
+        private string _host;
+
+        private MailAddress _mailAddress;
+        private IPHostEntry _ipHostEntry;
+        
 
         public Email(string email)
         {
@@ -18,28 +28,46 @@ namespace Validation
 
         public bool IsValid()
         {
-            var ret = false;
-
             string pattern = @"^(?!\.)(""([^""\r\\]|\\[""\r\\])*""|([-a-z0-9!#$%&'*+/=?^_`{|}~]|(?<!\.)\.)*)(?<!\.)@[a-z0-9][\w\.-]*[a-z0-9]\.[a-z][a-z\.]*[a-z]$";
 
             Regex regex = new Regex(pattern, RegexOptions.IgnoreCase);
 
-            if (validDomain)
+            if (resolveDns)
             {
-                MailAddress address = new MailAddress(_email);
-                string host = address.Host;
-                IPHostEntry resolve;
-                try
-                {
-                    resolve = Dns.GetHostEntry(host);
-                }
-                catch (SocketException ex)
-                {
-                    return false;
-                }
+                if (!ResolveDns()) return false;
+            }
+
+            if (whiteListOnly)
+            {
+                if (!IsWhiteList()) return false;
             }
 
             return  regex.IsMatch(_email);
+        }
+
+        private bool ResolveDns()
+        {
+            _mailAddress = new MailAddress(_email);
+            _host = _mailAddress.Host;
+
+            try
+            {
+                _ipHostEntry = Dns.GetHostEntry(_host);
+            }
+            catch (SocketException)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        /*
+         * @todo resolve dns and mx, verify on public rbl 
+         */
+        private bool IsWhiteList()
+        {
+            //Not Implemented Yet
+            return false;
         }
     }
 }

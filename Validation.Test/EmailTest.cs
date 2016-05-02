@@ -25,8 +25,7 @@ namespace Validation.Test
         public void TestInvalidEmailDomain()
         {
             var e = "someone@poxqts.com";
-            var email = new Email(e);
-            email.validDomain = true;
+            var email = new Email(e) {resolveDns = true};
             Assert.IsFalse(email.IsValid());
         }
 
@@ -34,9 +33,25 @@ namespace Validation.Test
         public void TestValidEmailDomain()
         {
             var e = "someone@gmail.com";
-            var email = new Email(e);
-            email.validDomain = true;
+            var email = new Email(e) {resolveDns = true};
             Assert.IsTrue(email.IsValid());
+        }
+
+        [Test]
+        public void TestValidWhiteListEmailDomain()
+        {
+            var e = "someone@hotmail.com";
+            var email = new Email(e) { resolveDns = true, whiteListOnly = true };
+            Assert.IsTrue(email.IsValid());
+        }
+
+        [Test]
+        public void TestInvalidWhiteListEmailDomain()
+        {
+            //Function Not Implemented Yet
+            var e = "someone@hormail.com";
+            var email = new Email(e) { resolveDns = true, whiteListOnly = true };
+            Assert.IsFalse(email.IsValid());
         }
     }
 }
