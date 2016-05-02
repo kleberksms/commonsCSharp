@@ -8,7 +8,7 @@
     var email = new Email("someone@xptofoobar.com");
     email.IsValid(); //true
 	
-	    var email = new Email("someone@xptofoobar.");
+	var email = new Email("someone@xptofoobar.");
     email.IsValid(); //false
 
 	var email = new Email("someone@xptofoobar.com"){resolveDns = true};
