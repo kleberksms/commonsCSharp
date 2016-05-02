@@ -29,4 +29,4 @@ Library inspired by [Respect].
  [Cpf]: <https://github.com/kleberksms/commonsCSharp/blob/master/Validation.Docs/Cpf.md>
  [Email]: <https://github.com/kleberksms/commonsCSharp/blob/master/Validation.Docs/Email.md>
  [NfeAccessKey]: <https://github.com/kleberksms/commonsCSharp/blob/master/Validation.Docs/NfeAccessKey.md>
- [NfeAccessKey]: <https://github.com/kleberksms/commonsCSharp/blob/master/Validation.Docs/PrimeNumber.md>
+ [PrimeNumber]: <https://github.com/kleberksms/commonsCSharp/blob/master/Validation.Docs/PrimeNumber.md>
