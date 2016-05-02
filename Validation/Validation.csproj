@@ -38,6 +38,7 @@
     <Compile Include="Cpf.cs" />
     <Compile Include="Email.cs" />
     <Compile Include="NfeAccessKey.cs" />
+    <Compile Include="PrimeNumber.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

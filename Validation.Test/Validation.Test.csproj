@@ -68,6 +68,7 @@
     <Compile Include="CpfTest.cs" />
     <Compile Include="EmailTest.cs" />
     <Compile Include="NfeAccessKeyTest.cs" />
+    <Compile Include="PrimeNumberTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
