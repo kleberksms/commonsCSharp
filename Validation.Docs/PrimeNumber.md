@@ -1,6 +1,6 @@
 # Validation
 
-### CPF
+### Prime Number
 
  - Verify Prime Number
   
