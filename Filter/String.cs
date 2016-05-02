@@ -81,16 +81,16 @@ namespace Filter
             var countNumber = 1;
             var aux = string.Empty;
 
-            foreach (var letter in formatter)
+            foreach (var chars in formatter)
             {
                 if (countLetter > 1)
                 {
-                    if (letter.Equals('A'))
+                    if (chars.Equals('A'))
                     {
                         aux = "[A-Za-z]{" + Convert.ToString(countLetter) + "}";
                         countLetter++;
                     }
-                    if (!letter.Equals('A'))
+                    if (!chars.Equals('A'))
                     {
                         countLetter = 1;
                         regex += aux;
@@ -99,37 +99,37 @@ namespace Filter
                 }
                 if (countNumber > 1)
                 {
-                    if (letter.Equals('0'))
+                    if (chars.Equals('0'))
                     {
                         aux = @"\d{" + Convert.ToString(countNumber) + "}";
                         countNumber++;
                     }
-                    if (!letter.Equals('0'))
+                    if (!chars.Equals('0'))
                     {
                         countNumber = 1;
                         regex += aux;
                         aux = string.Empty;
                     }
                 }
-                if (letter.Equals('A') && countLetter.Equals(1))
+                if (chars.Equals('A') && countLetter.Equals(1))
                 {
                     aux = "[A-Za-z]";
                     countLetter++;
                 }
-                if (letter.Equals('0') && countNumber.Equals(1))
+                if (chars.Equals('0') && countNumber.Equals(1))
                 {
                     aux = @"\d";
                     countNumber++;
                 }
-                if (letter.Equals(' '))
+                if (chars.Equals(' '))
                 {
                     aux = @"\s+";
                     regex += aux;
                     aux = string.Empty;
                 }
-                if (!letter.Equals('A') && !letter.Equals('0') && !letter.Equals(' '))
+                if (!chars.Equals('A') && !chars.Equals('0') && !chars.Equals(' '))
                 {
-                    aux = @"(\" + letter + ")";
+                    aux = @"(\" + chars + ")";
                     regex += aux;
                     aux = string.Empty;
                 }

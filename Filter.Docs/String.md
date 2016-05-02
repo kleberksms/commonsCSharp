@@ -44,7 +44,7 @@
 ```
 
 #### Mask
-- "A" for letters
+- "A" for chars
 - "0" for numbers
 
 
