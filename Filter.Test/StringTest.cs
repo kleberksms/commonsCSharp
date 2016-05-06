@@ -107,5 +107,23 @@ namespace Filter.Test
             Assert.AreEqual(String.AddMask("0000000-00.0000.000.0000","12345671212341231234"),"1234567-12.1234.123.1234");
         }
 
+        [Test]
+        public void AddMaskLessCharsTest()
+        {
+            Assert.AreEqual(String.AddMask("0000000-00.0000.000.0000", "1234567121"), "1234567-12.1");
+        }
+
+        [Test]
+        public void AddMaskMoreCharsTest()
+        {
+            Assert.AreEqual(String.AddMask("0000000-00.0000.000.0000", "12345671212341231234123456"), "1234567-12.1234.123.1234123456");
+        }
+
+        [Test]
+        public void AddMaskNoCharsTest()
+        {
+            Assert.AreEqual(String.AddMask("0000000-00.0000.000.0000", ""), "");
+        }
+
     }
 }

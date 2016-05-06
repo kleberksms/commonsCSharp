@@ -156,6 +156,10 @@ namespace Filter
             source = OnlyAlphanumerics(source);
             for (var i = 0; i < mask.Length; i++)
             {
+                if (i > source.Length)
+                {
+                    continue;
+                }
                 if (!mask[i].Equals('A') && !mask[i].Equals('0'))
                 {
                     source = source.Insert(i, mask[i].ToString());
