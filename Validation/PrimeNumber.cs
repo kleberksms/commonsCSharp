@@ -17,7 +17,7 @@ namespace Validation
 
             if (_number != 2 && (_number%2) == 0) return false;
 
-            for (var i = 3; i < Math.Ceiling(Math.Sqrt(_number)); i+= 2)
+            for (var i = 3; i <= Math.Ceiling(Math.Sqrt(_number)); i+= 2)
             {
                 if ((_number%i) == 0) return false;
             }

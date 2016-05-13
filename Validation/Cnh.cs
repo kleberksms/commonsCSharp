@@ -3,16 +3,17 @@ using System.Text.RegularExpressions;
 
 namespace Validation
 {
-    public class Cnh
+    public class Cnh : Validator
     {
-        private string _cnh;
+        private readonly string _cnh;
 
-        public Cnh(string cnh)
+        public Cnh(string cnh = "")
         {
-            _cnh = cnh;
+            Input = cnh;
+            _cnh = Input;
         }
 
-        public bool IsValid()
+        public new bool IsValid()
         {
             var ret = false;
 

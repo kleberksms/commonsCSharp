@@ -90,6 +90,12 @@ namespace Filter.Test
         }
 
         [Test]
+        public void StringBetweenResturnEmptyTest()
+        {
+            Assert.AreEqual(String.GetBetween("This is an example string and my data is here", "my", "now"), string.Empty);
+        }
+
+        [Test]
         public void StringBetweenIncludeTest()
         {
             Assert.AreEqual(String.GetBetween("This is an example string and my data is here", "my", "is", true), "my data is");
