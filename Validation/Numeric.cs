@@ -2,7 +2,7 @@
 
 namespace Validation
 {
-    public class Numeric : Validator
+    public class Numeric 
     {
         public virtual bool Validate(string input)
         {
